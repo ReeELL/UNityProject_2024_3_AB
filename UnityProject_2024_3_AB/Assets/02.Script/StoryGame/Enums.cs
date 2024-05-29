@@ -2,57 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace STORYGAME
+public class Enums
 {
-    public class Enums
+    public enum StoryType
     {
-        public enum StoryType
-        {
-            MAIN,
-            SUB,
-            SERIAL
-        }
-
-        public enum EvenType
-        {
-            NONE,
-            GoToBattle = 100,
-            CheckSTR = 1000,
-            CheckDEX,
-            CheckCON,
-            CheckINT,
-            CheckWIS,
-            CheckCHA
-        }
-        public enum ResultType
-        {
-            ChangeHp,
-            ChangeSp,
-            AddExperience,
-            GoToShop,
-            GoToNextStory,
-            GoToRandomStory,
-            GoToEnding
-        }
+        MAIN,
+        SUB,
+        SERIAL
     }
+}
 
-    [System.Serializable]
-    public class Stats
-    {
-        //체력과 기력
-        public int hpPoint;
-        public int spPoint;
+public enum EventType
+{
+    NONE,
+    GOTOBATTLE = 100,
+    CheckSTR = 1000,
+}
+public enum ResultType      //이벤트 결과 열거
+{
+    AddExperience,
+    GoToNextSotry,
+    GoToRandoemStory
+}
 
-        public int currentHpPoint;
-        public int currentSpPoint;
-        public int currentXpPoint;
+[System.Serializable]
+public class Stats
+{
+    public int hpPoint;
+    public int spPoint;
 
-        //기본 스텟 설정
-        public int strength;        //STR
-        public int dexterity;       //DEX
-        public int consitiution;    //CON
-        public int Intelligence;    //INT
-        public int wisdom;          //WIS
-        public int charisma;        //CHA
-    }
+    public int currentHpPoint;
+    public int currentSpPoint;
+    public int currentXpPoint;
+
+    public int strength;
+    public int dexterity;
+    public int consitution;
+    public int Intelligence;
+    public int wisdom;
+    public int charisma;
 }
